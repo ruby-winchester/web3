@@ -57,7 +57,7 @@
             return false;
         }
         $.ajax({
-            url: "127.0.0.1/Teacher/Login", //加上这句话
+            url:  '' + ServerIp + "/Teacher/Login", //加上这句话
             xhrFields: {
                 withCredentials: true
             },
@@ -72,7 +72,7 @@
             success: function(data) {
                 var data = JSON.parse(data);
                 if (data.status == 1) {
-                    window.location.href = '' + ServerIp + '/static/production/teacher_manage.html';
+                    window.location.href = '' + ServerIp + '/static/teacher_manage.html';
                 } else {
                     alert(data.message);
                 }
@@ -83,12 +83,6 @@
                 // alert(textStatus);
                 // alert("errorThrown "+errorThrown)
                 // var data = JSON.parse(data);
-                // if(data.status==1){
-                //    window.location.href = 'http://127.0.0.1:8080/static/exam/index.html';
-                // }else{
-                //    alert(data.message);
-                // }
-                // window.location.href = 'http://127.0.0.1:8080/static/exam/index.html';
                 // alert("error")
             }
         });
